@@ -59,18 +59,19 @@ export class PostDetailPage extends React.Component {
   };
 
   render() {
-  return (
-    <div>
-      <Helmet title={this.props.post.title} />
-      <a className={styles['edit-post-button']} href="#" onClick={this.props.toggleEditPost}><FormattedMessage id="editPost" /></a>
-      {
-        this.props.showEditPost
-          ? this.renderPostForm()
-          : this.renderPost()
-      }
-    </div>
-  );
-}
+    return (
+      <div>
+        <Helmet title={this.props.post.title} />
+        <a className={styles['edit-post-button']} href="#" onClick={this.props.toggleEditPost}><FormattedMessage id="editPost" /></a>
+        {
+          this.props.showEditPost
+            ? this.renderPostForm()
+            : this.renderPost()
+        }
+      </div>
+    );
+  };
+};
 
 // Actions required to provide data for this component to render in server side.
 PostDetailPage.need = [params => {
